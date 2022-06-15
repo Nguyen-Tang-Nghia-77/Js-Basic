@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Interest</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let saveMoney = +prompt("Nhập số tiền gửi tiết kiệm(đơn vị triệu đồng):");
+    let year = +prompt("Nhập số năm gửi :");
+    let intrest =parseFloat(prompt("Nhập lãi xuất :"));
+
+    // Tính lãi xuất hằng năm 
+    let intrestYear = (saveMoney * intrest)/100;
+    document.write("Lãi Xuất hằng năm là:" + " "+ intrestYear +" " +"triệu đồng" + '<br/>');
+    
+    // Tính tiền gốc lẫn lãi sau n năm 
+    let totalMoney = saveMoney + year * intrestYear;
+    document.write("Tổng tiền gốc lẫn lãi sau" + " "+ year+" " +"năm gửi là:"+" " + totalMoney+" " +"triệu đồng")
+
+</script>
