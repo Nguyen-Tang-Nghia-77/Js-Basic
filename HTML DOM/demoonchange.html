@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="Cars" id="cars" onchange="Car();">
+        <option value="au">Audi</option>
+        <option value="mc">Mc Laren</option>
+        <option value="to">Toyota</option>
+        <option value="vol">Volvo</option>
+        <option value="lam">Lambogini</option>
+    </select>
+</body>
+</html>
+<script>
+    function Car() {
+        let car = document.getElementById('cars').value;
+        alert("Bạn đang chọn " + car);
+    }
+    
+</script>
