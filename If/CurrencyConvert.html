@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Currency</title>
+</head>
+<body>
+    <p>Amount</p>
+    <input type="number" id="amount">
+    <p>from Currency</p>
+    <select name="" id="fromCur">
+        <option value="Usd">Usd</option>
+        <option value="VietNam">Việt Nam</option>
+    </select>
+    <p>To Currency</p>
+    <select name="" id="toCur">
+        <option value="VietNam">Việt Nam</option>
+        <option value="Usd">Usd</option>
+    </select>
+    <p>Exchange Rate</p>
+    <button onclick="convertCur();">Convert</button>
+    <p id="result">result</p>
+</body>
+</html>
+<script>
+    
+    function convertCur() {
+        let amount = document.getElementById('amount').value;
+        let fromCur = document.getElementById('fromCur').value;
+        let toCur = document.getElementById('toCur').value;
+        let rateCur = 0;
+        let result = document.getElementById('result').innerHTML;
+        if (fromCur == "Usd" && toCur == "VietNam") {
+            rateCur = 23000;
+            result = (amount * rateCur) + "VNĐ"
+            
+        } else if (fromCur == "VietNam" && toCur == "Usd") {
+            rateCur = 0.04;
+            result = amount * rateCur + " Usd";
+        }
+        document.getElementById('result').innerHTML = result;
+        
+    }
+</script>
+
+
+
+
+    
+    
+

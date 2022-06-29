@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation Score College</title>
+</head>
+<style>
+    
+   
+</style>
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <form action="" id="container">
+        Môn Toán  <input type="number" id="match"><br><br>
+        Môn Văn <input type="number" id="literature"><br><br>
+        Môn Anh  <input type="number" id="eng"><br><br>
+        Khu Vực <select name="KV" id="kv">
+            <option value="1">KV1</option>
+            <option value="2">KV2</option>
+            <option value="2NT">KV2-NT</option>
+            <option value="3">KV3</option>
+        </select><br><br>
+        <button onclick='Score();'>Tính điểm</button>
+        <p id="result"></p>
+    </form>
+    
+</body>
+</html>
+<script>
+    
+    function Score() {
+        let math = Number(document.getElementById('match').value);
+        let literature = Number(document.getElementById('literature').value);
+        let eng = Number(document.getElementById('eng').value);
+        let  sum = math + literature + eng ;
+        let area = document.getElementById('kv');
+        var value = area.options [area.selectedIndex].value;
+        let result = 0 ;
+        if (value === "1") {
+            result = sum + 0.75;
+        } else if (value === "2") {
+            result = sum + 0.25;
+        } else if ( value === "2NT") {
+            result = sum + 0.5;
+        } else if(value === "3") {
+            result = sum 
+        }
+        document.getElementById('result').innerHTML = "Tổng điểm đại học khối D của bạn là: " + result;
+    }
+</script>
+        
+
+        
+
+        
+        
+
+        
+
+        
+
+
+    
