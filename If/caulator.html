@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+</head>
+<style>
+    * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    }
+    #result {
+    padding: 0.5rem 1rem 0rem;
+    text-align: right;
+    border: 1px solid black;
+    height: 50px;
+    font-size: 1.8rem;
+    color: black;
+    background: white;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    }
+    .container-grid {
+    padding: 5rem 0;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    }
+    .caculate {
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: 2fr 1.5fr;
+    }
+    .number {
+        background: white;
+        border-right: 1px solid black;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .operation {
+        background: white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .btn {
+        border: none;
+        width: 100%;
+        font-size: 1.5rem;
+        color: black;
+        background: white;
+        outline: none;
+        cursor: pointer;
+    }
+    .operation .btn {
+        color: #1a73e0;
+    }
+    .btn:active{
+        border-radius: 50%;
+        background: whitesmoke;
+        cursor: pointer;
+    }
+    
+</style>
+<body>
+    <div class="container-grid">
+        <div id="result"></div>
+        <div class="caculate">
+            <div class="number">
+                <button class="btn" value="7">7</button>
+                <button class="btn" value="8">8</button>
+                <button class="btn" value="9">9</button>
+                <button class="btn" value="4">4</button>
+                <button class="btn" value="5">5</button>
+                <button class="btn" value="6">6</button>
+                <button class="btn" value="1">1</button>
+                <button class="btn" value="2">2</button>
+                <button class="btn" value="3">3</button>
+                <button class="btn" value="0">0</button>
+                <button class="btn" value=".">.</button>
+            </div>
+            <div class="operation">
+                <button class="btn" onclick="undo();">DEL</button>
+                <button class="btn" onclick="clean();">AC</button>
+                <button class="btn" value="*">x</button>
+                <button class="btn" value="/">/</button>
+                <button class="btn" value="+">+</button>
+                <button class="btn" value="-">-</button>
+                <button class="btn" onclick="equal()">=</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const numbers = document.getElementsByClassName('btn');
+    const result = document.getElementById("result");
+
+    for (let number of numbers) {
+        number.addEventListener('click', function() {
+            result.innerHTML += this.value;
+        });
+    }
+    function equal() {
+        let res = result.innerHTML;
+        let output = eval(res);
+        result.innerHTML = output;
+    }
+    function clean() {
+        result.innerHTML = " ";
+    }
+    function undo() {
+        let res = result.innerHTML;
+        result.innerHTML = res.substring(0, res.length-1);
+    }
+</script>
+
+   
+
+
+
+
+                
+                
+                
+                
