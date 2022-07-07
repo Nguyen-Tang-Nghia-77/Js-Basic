@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let numbers = prompt("Nhập số lượng số nguyên tố cần hiển thị:");
+    let count = 0;
+    for (let n = 2; ; n++) {
+        // Biến cờ hiệu
+        var flag = true;
+
+        // Nếu n bé hơn 2 tức là không phải số nguyên tố
+        if (n < 2){
+            flag = false;
+        }
+        else if (n == 2){
+            flag = true;
+        }
+        else if (n % 2 == 0){
+        flag = false;
+        }
+        else{
+            // lặp từ 3 tới n-1 với bước nhảy là 2 (i+=2)
+            for (var i = 3; i < n/2; i+=2) {
+                if (n % i == 0){
+                    flag = false;
+                    break;
+                }
+            }
+        }
+
+        // Kiểm tra biến flag
+        if (flag == true){
+            document.write(n + " là số nguyên tố <br/>");
+            count++
+            console.log(count)
+            }
+        if (count == numbers) {
+            break;
+        }
+    }
+</script>
+    
+    
+    
+
+    
+
+
+
+    

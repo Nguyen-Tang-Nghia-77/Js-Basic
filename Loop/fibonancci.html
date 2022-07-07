@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonanci</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let n = parseInt(prompt("Nhập số nguyên dương n:"));
+    
+    
+
+    let fn = 0;
+    let f1 = 1;
+    let f2 = 0;
+    
+    
+        for (let i = 1; i <= n; i++) {
+            fn = f1 + f2;
+            if (i === n) {
+                document.write(`${fn}.`);
+                break;
+            }
+            document.write(`${fn}, `);
+            f1 = f2;
+            f2 = fn;
+        }
+            
+    
+</script>
+            

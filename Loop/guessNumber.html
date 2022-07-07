@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number Game</title>
+</head>
+<body>
+    <button onclick="guessGame();">Chơi</button>
+    <p id="result"></p>
+</body>
+</html>
+<script>
+    function guessGame() {
+    let result = document.getElementById('result');    
+    let numbermax = parseInt(prompt("Enter The max number:"));
+    while (!numbermax) {
+        let numbermax = parseInt(prompt("Enter The valid number:"));
+    }
+    const targetNum = Math.floor((Math.random()*numbermax)+1);
+    console.log(targetNum)
+    
+    let guess = parseInt(prompt("Nhập số bạn đoán"));
+    let attempts = 1 ;
+    while (parseInt(guess) !== targetNum) {
+        attempts++
+        if (guess > targetNum) {
+            guess = parseInt(prompt("Too High! Please Enter Number: "));
+        } else {
+            guess = parseInt(prompt("Too Low! Please Enter Number: "));
+        }
+        if (attempts > 2) {
+            if (guess === targetNum) {
+            
+            } else {
+                
+                result.innerHTML = 'you have run out of guesses <br> the exact number is ' + targetNum;
+                break;
+            }
+            
+        }
+    }
+    if (guess === targetNum) {
+        console.log("Congrast You Win")
+        console.log(`You got it! It took you ${attempts} guess`)
+        result.innerHTML = 'Congrast You Win  <br>' + `You got it! It took you ${attempts} guess`;
+    }
+    }
+    
+    
+
+    
+
+</script>
