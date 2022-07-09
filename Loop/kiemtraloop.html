@@ -11,16 +11,15 @@
 </body>
 </html>
 <script>
-    // debugger
-    let count = 1;
-    let passWord = +prompt("Nhập Mật Khẩu:");
+    let count = 5;
+    let passWord = prompt("Nhập mật khẩu:");
     if (passWord == 12345) {
             alert("bạn đã đăng nhập thành công !");
         }  
     while (passWord != 12345) {
-        passWord = prompt("Vui lòng nhập lại mật khẩu: ");
-        count++
-        if (count == 5) {
+        passWord = prompt("bạn còn "+count+" lần nhập");
+        count--
+        if (count == 0) {
             alert("Bạn đã bị khóa đăng nhập!");
             break;
         }
@@ -30,6 +29,7 @@
         }  
     } 
 </script>
+    
     
             
     
