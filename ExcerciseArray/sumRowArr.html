@@ -12,14 +12,13 @@
 </html>
 <script>
     // tạo hàm random số ngẫu nhiên
-    const check = ()=> (
-        Math.floor(Math.random() * 8) + 1
-    );
-    let numbers = [
-        [check(),check(),check(),check()],
-        [check(),check(),check(),check()],
-        [check(),check(),check(),check()]
-    ]
+    let numbers = [];
+    for (let i = 0; i <5; i++) {
+        numbers[i] = [];
+        for (let j = 0; j < 5; j++) {
+            numbers[i][j] =Math.floor(Math.random()*10)
+        }
+    }
     console.log(numbers)
     // Tạo biến max để tìm số lớn nhất trong hàng, và một mảng rỗng để chứa tổng của 3 hàng
     let max = 0;
