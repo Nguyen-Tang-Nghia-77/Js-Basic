@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // tạo hàm random số ngẫu nhiên
+    const check = ()=> (
+        Math.floor(Math.random() * 8) + 1
+    );
+    let numbers = [
+        [check(),check(),check(),check()],
+        [check(),check(),check(),check()],
+        [check(),check(),check(),check()]
+    ]
+    console.log(numbers)
+    // Tạo biến max để tìm số lớn nhất trong hàng, và một mảng rỗng để chứa tổng của 3 hàng
+    let max = 0;
+    let count = [];
+    for(let i = 0; i<numbers.length;i++) {
+        let total_rows =0 ;
+        for (let j = 0; j < numbers[i].length; j++) {
+            total_rows += numbers[i][j];
+        }
+        count.push(total_rows);
+        if (total_rows> max) {
+            max = total_rows;
+        }
+        document.write(`Tổng hàng thứ ${i+1} là ${total_rows} <br>`)
+    }
+    // Lặp mảng count nếu phần tử trong mảng bằng với max thì in ra vị trí hàng lớn nhất
+    for (let x = 0; x<count.length;x++) {
+        if(count[x] == max) {
+            document.write(`Hàng có tổng lớn nhất là: ${x+1}`);
+            break;
+        }
+    }
+</script>
+        
+        
+    
+        
+    
+    
+            

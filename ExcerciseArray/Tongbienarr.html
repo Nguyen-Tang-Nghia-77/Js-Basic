@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const check = ()=> (
+        Math.floor(Math.random() * 8) + 1
+    );
+    let numbers = [
+        [check(),check(),check(),check()],
+        [check(),check(),check(),check()],
+        [check(),check(),check(),check()]
+    ]
+    console.log(numbers)
+    let sum = 0;
+    let sumEven = 0
+    for (let i = 0; i < numbers.length; i++) {
+        for(let j = 0; j < numbers[i].length; j++) {
+            if (i == 0 || i == (numbers.length-1) || j == 0 || j == numbers[i].length-1) {
+                // Tính tổng viền của mảng
+                sum += numbers[i][j]
+                
+                // Tính tổng các số chẵn của viền
+                if (numbers[i][j] % 2 == 0) {
+                sumEven += numbers[i][j]
+                }
+            } 
+        }
+    }
+    document.write("Tổng viền của mảng là: "+sum)
+    document.write(" <br> Tổng số chẵn viền của mảng là: "+sumEven)
+</script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                
+                
+
+            
+        
+        
+   
+    
