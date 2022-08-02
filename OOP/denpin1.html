@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Battery {
+        constructor (number) {
+            this.energy = number;
+        }
+        setEnergy(number_battery) {
+            this.energy = number_battery;
+        }
+        getEnergy() {
+            return this.energy;
+        }
+        decreaseEnergy() {
+            if(this.energy > 0) {
+                this.energy--;
+            } else {
+                document.write("Hết pin");
+            }
+        }
+    }
+    let rabbit_battery = new Battery(10);
+    class Lamp {
+        constructor (status, my_battery) {
+            this.status = status;
+            this.battery = my_battery;
+        }
+        getBatterryInfo() {
+            return this.battery.getEnergy();
+        }
+        light() {
+            if(this.status) {
+                alert("sáng");
+            } else {
+                alert("Tắt");
+            }
+        }
+        turnOn() {
+            this.status = true ;
+            this.battery.decreaseEnergy();
+        }
+        turnOff() {
+            this.status = false;
+        }
+    }
+    let lamp1 = new Lamp(false, rabbit_battery);
+    document.write(lamp1.getBatterryInfo());
+    lamp1.turnOn();
+    lamp1.light();
+    lamp1.turnOff();
+    lamp1.turnOn()
+    lamp1.turnOff();
+    lamp1.turnOn()
+    
+    document.write(lamp1.getBatterryInfo());
+
+
+</script>
